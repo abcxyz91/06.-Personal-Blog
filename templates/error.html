@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <div class="article-card text-center">
+        <h1 class="h3 mb-4">{{ top }}</h1>
+        
+        {% if 'error.png' in (request.base_url or '') %}
+            <img class="img-fluid mb-4" 
+                 style="max-width: 300px; opacity: 0.8;" 
+                 alt="{{ top }}" 
+                 src="static/error.png" 
+                 title="{{ top }}">
+        {% endif %}
+        
+        <p class="text-secondary mb-4">{{ bottom }}</p>
+        
+        <div>
+            <a href="/" class="btn-add">Return Home</a>
+        </div>
+    </div>
+{% endblock %}

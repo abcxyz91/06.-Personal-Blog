@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="mb-4">
+        <h2 class="h2">Minh's Personal Blog</h2>
+    </div>
+
+    <div class="articles-list">
+        {% for article in articles %}
+            <div class="article-card">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <a href="/article/{{ article.id }}" class="article-title">{{ article.title }}</a>
+                        <div class="article-date mt-1">{{ article.date }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

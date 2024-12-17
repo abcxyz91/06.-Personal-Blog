@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 mb-0">Minh's Personal Blog</h2>
+        <a href="/new" class="btn-add">+ Add Article</a>
+    </div>
+    
+    <div class="articles-list">
+        {% for article in articles %}
+            <div class="article-card d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="/article/{{ article.id }}" class="article-title">{{ article.title }}</a>
+                    <div class="article-date">{{ article.date }}</div>
+                </div>
+                <div class="admin-actions">
+                    <a href="/edit/{{ article.id }}" class="btn btn-sm btn-outline-secondary me-2">Edit</a>
+                    <form action="/delete/{{ article.id }}" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-outline-danger" 
+                                onclick="return confirm('Are you sure you want to delete this article?')">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

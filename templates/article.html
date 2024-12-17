@@ -1,0 +1,11 @@
+{% extends "layout.html" %} 
+
+{% block main %}
+    <article class="article-card">
+        <h1 class="h2 mb-2">{{article.title}}</h1>
+        <div class="article-date mb-4">{{ article.date }}</div>
+        <div class="article-content">
+            {{article.content | safe}}
+        </div>
+    </article>
+{% endblock %}

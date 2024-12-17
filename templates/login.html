@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+<div class="article-card" style="max-width: 400px; margin: 2rem auto;">
+    <h2 class="h4 mb-4 text-center">Login</h2>
+    
+    <form action="/login" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="username" 
+                   name="username" 
+                   autocomplete="off" 
+                   autofocus 
+                   required>
+        </div>
+        
+        <div class="mb-4">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" 
+                   class="form-control" 
+                   id="password" 
+                   name="password" 
+                   required>
+        </div>
+        
+        <div class="d-grid">
+            <button type="submit" class="btn-add w-100">Login</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
